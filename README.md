@@ -2,71 +2,97 @@
 
 ## Dataset
 
-**Customer Personality Analysis** (`marketing_campaign.csv`)
+Customer Personality Analysis (`marketing_campaign.csv`)
 
-The dataset was obtained from Kaggle and used for practicing data cleaning and preprocessing with Python and Pandas.
+The dataset was obtained from Kaggle and used to practice data cleaning and preprocessing using Python and Pandas.
 
 ## Objective
 
-Clean and preprocess a raw customer dataset containing missing values, duplicate records, inconsistent text categories, date formatting issues, and data-type requirements.
+The main objective of this project is to clean and prepare the customer dataset by handling missing values, duplicate records, inconsistent categories, date formatting, and data types.
 
 ## Tools Used
 
-- Python
-- Pandas
-- CSV
+* Python
+* Pandas
+* CSV
 
-## Cleaning Performed
+## Data Cleaning Steps
 
-1. **Missing Values**
-   - Checked missing values using Pandas.
-   - The `income` column contained 24 missing values.
-   - Missing income values were filled using the median income of 51381.50.
+### 1. Handling Missing Values
 
-2. **Duplicate Records**
-   - Checked for exact duplicate rows.
-   - Duplicate rows found: 0.
-   - Therefore, no duplicate rows needed to be removed.
+* Checked the dataset for missing values.
+* Found 24 missing values in the `income` column.
+* Filled the missing income values using the median income of `51381.50`.
 
-3. **Column Names**
-   - Renamed column headers to lowercase.
-   - Standardized column names using underscores for consistency.
+### 2. Checking Duplicate Records
 
-4. **Text Standardization**
-   - Removed leading and trailing whitespace from text values.
-   - Standardized unusual `marital_status` categories:
-     - `Alone` → `Single`
-     - `Absurd` → `Other`
-     - `YOLO` → `Other`
+* Checked the dataset for duplicate rows.
+* No duplicate records were found.
+* Total duplicate rows: 0.
 
-5. **Date Formatting**
-   - Converted `dt_customer` to a datetime format for validation.
-   - Standardized the saved date values to `dd-mm-yyyy` format.
+### 3. Standardizing Column Names
 
-6. **Data Types**
-   - Converted appropriate numeric fields to numeric data types using Pandas.
+* Converted column names to lowercase.
+* Used underscores to make the column names consistent and easier to work with.
 
-## Before and After
+### 4. Cleaning Text Values
 
-| Description | Result |
-|---|---:|
-| Raw dataset rows | 2240 |
-| Cleaned dataset rows | 2240 |
-| Raw columns | 29 |
-| Cleaned columns | 29 |
-| Missing income values handled | 24 |
-| Duplicate rows removed | 0 |
-| Invalid dates after parsing | 0 |
+* Removed unnecessary spaces from text values.
+* Standardized unusual values in the `marital_status` column:
 
-## Files
+  * `Alone` → `Single`
+  * `Absurd` → `Other`
+  * `YOLO` → `Other`
 
-- `data/marketing_campaign_raw.csv` - Original dataset copy
-- `data/marketing_campaign_cleaned.csv` - Cleaned dataset
-- `data_cleaning.py` - Python script used for cleaning and preprocessing
+### 5. Date Formatting
+
+* Converted `dt_customer` into a datetime format for validation.
+* Standardized the date format to `dd-mm-yyyy`.
+
+### 6. Data Types
+
+* Checked the data types of the columns.
+* Converted appropriate columns to numeric data types using Pandas.
+
+## Dataset Details
+
+| Description             | Value |
+| ----------------------- | ----: |
+| Rows before cleaning    |  2240 |
+| Rows after cleaning     |  2240 |
+| Columns before cleaning |    29 |
+| Columns after cleaning  |    29 |
+| Missing income values   |    24 |
+| Duplicate rows          |     0 |
+| Invalid dates           |     0 |
+
+## Project Files
+
+```text
+Task-1-Data-Cleaning/
+|
+|-- data/
+|   |-- marketing_campaign_raw.csv
+|   |-- marketing_campaign_cleaned.csv
+|
+|-- data_cleaning.py
+|-- README.md
+```
 
 ## How to Run
 
-Install Pandas using:
+Install Pandas:
 
 ```bash
 pip install pandas
+```
+
+Run the Python script:
+
+```bash
+python data_cleaning.py
+```
+
+## Result
+
+The dataset was cleaned and standardized using Python and Pandas. Missing values were handled, duplicate records were checked, text categories were standardized, dates were formatted, and appropriate data types were applied.
